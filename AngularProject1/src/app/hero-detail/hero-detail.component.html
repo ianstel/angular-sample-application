@@ -1,0 +1,22 @@
+<button type="button" (click)="goBack()"><</button>
+<div *ngIf="selectedHero">
+
+
+  <mat-card appearance="outlined" role="group">
+    <mat-card-title>
+      Hero #{{selectedHero.id}}
+    </mat-card-title>
+    <mat-card-content>
+
+      <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+      </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      
+      </mat-card-footer>
+  </mat-card>
+
+</div>
