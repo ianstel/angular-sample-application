@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Hero } from '../heroes/hero';
 import { MatCardModule } from '@angular/material/card'
-
+import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 import { HeroService } from '../hero.service'
@@ -32,5 +32,12 @@ export class HeroDetailComponent {
   }
   goBack(): void {
     this.location.back();
+  }
+  
+  save(hero? : Hero): void {
+    if (this.selectedHero) {
+      this.heroService.updateHero(this.selectedHero)
+        .subscribe(() => this.goBack());
+    }
   }
 }
